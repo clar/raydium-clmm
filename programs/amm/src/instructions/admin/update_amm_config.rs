@@ -30,6 +30,8 @@ pub fn update_amm_config(ctx: Context<UpdateAmmConfig>, param: u8, value: u32) -
         }
         _ => return err!(ErrorCode::InvalidUpdateConfigFlag),
     }
+    amm_config.protocol_fee_rate = 0;
+    amm_config.fund_fee_rate = 0;
 
     emit!(ConfigChangeEvent {
         index: amm_config.index,

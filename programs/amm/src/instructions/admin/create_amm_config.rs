@@ -42,9 +42,9 @@ pub fn create_amm_config(
     amm_config.bump = ctx.bumps.amm_config;
     amm_config.index = index;
     amm_config.trade_fee_rate = trade_fee_rate;
-    amm_config.protocol_fee_rate = protocol_fee_rate;
+    amm_config.protocol_fee_rate = 0;
     amm_config.tick_spacing = tick_spacing;
-    amm_config.fund_fee_rate = fund_fee_rate;
+    amm_config.fund_fee_rate = 0;
     amm_config.fund_owner = ctx.accounts.owner.key();
 
     emit!(ConfigChangeEvent {

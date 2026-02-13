@@ -21,16 +21,16 @@ solana_security_txt::security_txt! {
 }
 
 #[cfg(feature = "devnet")]
-declare_id!("DRayAUgENGQBKVaX8owNhgzkEDyoHTGVEGHVJT1E9pfH");
+declare_id!("FNJHxG95pChntXLTzBxdCPdgcA4iPsjHpJBHPJXmNN28");
 #[cfg(not(feature = "devnet"))]
-declare_id!("CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK");
+declare_id!("HXPCR37EXDcq9erFwQv9Y9C4UGyGo3x7aMM7rSKrf2r7");
 
 pub mod admin {
     use super::{pubkey, Pubkey};
     #[cfg(feature = "devnet")]
-    pub const ID: Pubkey = pubkey!("DRayqG9RXYi8WHgWEmRQGrUWRWbhjYWYkCRJDd6JBBak");
+    pub const ID: Pubkey = pubkey!("9mvddFmGYCyoCCiQ2hMpRoerezyDkMAztsBVAvHg4ExA");
     #[cfg(not(feature = "devnet"))]
-    pub const ID: Pubkey = pubkey!("GThUX1Atko4tqhN2NaiTazWSeFWMuiUvfFnyJyUghFMJ");
+    pub const ID: Pubkey = pubkey!("9mvddFmGYCyoCCiQ2hMpRoerezyDkMAztsBVAvHg4ExA");
 }
 
 #[program]
