@@ -77,16 +77,26 @@ Admin address is in `programs/amm/src/lib.rs` under `pub mod admin` — currentl
 - `main` — base Raydium CLMM with Anchor 0.32.1 upgrade
 - `release/zero-fees` — current branch, contains zero-fee enforcement + deployment scripts
 
-## Deployment History (Both Closed)
+## Deployment History
 
 | Environment | Program ID | Status |
 |-------------|-----------|--------|
-| Devnet | `FNJHxG95pChntXLTzBxdCPdgcA4iPsjHpJBHPJXmNN28` | Closed |
-| Mainnet | `FXGBNyA7VUWAwhCcXuotQbaHjCteXBLwXiHdwgbbUz2U` | Closed |
+| Devnet (v1) | `FNJHxG95pChntXLTzBxdCPdgcA4iPsjHpJBHPJXmNN28` | Closed |
+| Mainnet (v1) | `FXGBNyA7VUWAwhCcXuotQbaHjCteXBLwXiHdwgbbUz2U` | Closed |
+| Mainnet (v2) | `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX` | **Active** |
 
-Current IDs in code (for next deployment):
+Current IDs in code:
 - Devnet: `8kpocpzq5VVz1FbNNCmpb72j8apf8dFb7XsJfYUdCmiC`
-- Mainnet: `FXGBNyA7VUWAwhCcXuotQbaHjCteXBLwXiHdwgbbUz2U`
+- Mainnet: `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX`
+
+### Active Mainnet Accounts
+- AmmConfig (index=1): `DCYTDLDRTb6nwmRsqFUeNEvZrVXNryKA7SB8dCNQWwhP`
+- TSLAx/USDC Pool: `2QpkNT4Jd4s4SijMYuZqf8enf9XJCBvrS4LhQA5zNj5J`
+- IDL Account: `5eXGUyeWPmfG7CMuCsKaJiPbYBKSetELeKDKTYsBLRcC`
+- ~~AmmConfig (index=0): `4FvxLbieMYhoQMgtEv5cmYtKaatMaSN5hA7jbJUcm4E7`~~ (废弃，价格 bug)
+- ~~旧池子: `HBs5ufwcDnrfcVqNv7Mamkocdnb2mBY11kF7FQyNLSkg`~~ (废弃，liquidity=0)
+
+See `MAINNET_DEPLOY.md` for full deployment report.
 
 ## Deployment Cost Estimate
 
@@ -101,6 +111,7 @@ Current IDs in code (for next deployment):
 2. **Correct close order**: Remove liquidity → Close positions → Close IDL → Close program
 3. **Token-2022 NFTs**: `closePosition` requires `TOKEN_2022_PROGRAM_ID` (not `TOKEN_PROGRAM_ID`) for the token_program parameter.
 4. **PDA accounts cannot be reclaimed** after program close (PoolState, AmmConfig, TickArray, ObservationState, etc.) — they are considered permanent infrastructure.
+5. **RefCell double-borrow in swap**: When passing tick arrays in `remainingAccounts` for `swapV2`, deduplicate to avoid passing the same PDA twice (causes `RefCell already mutably borrowed` panic).
 
 ## Contract Architecture Quick Reference
 

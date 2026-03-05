@@ -9,8 +9,11 @@ resolution = true
 [features.devnet]
 amm_v3 = ["devnet"]
 
+[programs.mainnet]
+amm_v3 = "CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX"
+
 [programs.devnet]
-amm_v3 = "FNJHxG95pChntXLTzBxdCPdgcA4iPsjHpJBHPJXmNN28"
+amm_v3 = "8kpocpzq5VVz1FbNNCmpb72j8apf8dFb7XsJfYUdCmiC"
 
 [registry]
 url = "https://github.com/raydium-io/raydium-amm-v3"
