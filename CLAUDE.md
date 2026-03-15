@@ -91,10 +91,9 @@ Current IDs in code:
 
 ### Active Mainnet Accounts
 - AmmConfig (index=1): `DCYTDLDRTb6nwmRsqFUeNEvZrVXNryKA7SB8dCNQWwhP`
-- TSLAx/USDC Pool: `2QpkNT4Jd4s4SijMYuZqf8enf9XJCBvrS4LhQA5zNj5J`
 - IDL Account: `5eXGUyeWPmfG7CMuCsKaJiPbYBKSetELeKDKTYsBLRcC`
-- ~~AmmConfig (index=0): `4FvxLbieMYhoQMgtEv5cmYtKaatMaSN5hA7jbJUcm4E7`~~ (废弃，价格 bug)
-- ~~旧池子: `HBs5ufwcDnrfcVqNv7Mamkocdnb2mBY11kF7FQyNLSkg`~~ (废弃，liquidity=0)
+- Code Verify: ✅ `60e8dc58b8b666829358b88470d16dca469fd82db03e457a5eafa523a1019888`
+- 10 Active Pools: TSLAx, CRCLx, MSTRx, NVDAx, AMZNx, AAPLx, GOOGLx, QQQx, METAx, SPYx (all paired with USDC)
 
 See `MAINNET_DEPLOY.md` for full deployment report.
 
