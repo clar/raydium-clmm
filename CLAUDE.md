@@ -1,5 +1,11 @@
 # Raydium CLMM Fork - Zero Protocol/Fund Fees
 
+> ⚠️ **Project shut down 2026-07-17.** Mainnet fork program `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX`
+> has been permanently closed via `solana program close`. All LPs withdrawn, IDL account closed.
+> The deployment history below is retained as reference — nothing on chain is still operational.
+> Full teardown record: [raydium-lp-compare/SHUTDOWN.md](https://github.com/clar/raydium-lp-compare/blob/main/SHUTDOWN.md).
+> Comparison results and rationale: [raydium-lp-compare/REPORT.md](https://github.com/clar/raydium-lp-compare/blob/main/REPORT.md).
+
 ## Project Overview
 
 This is a fork of Raydium CLMM (Concentrated Liquidity Market Maker) on Solana. The core modification enforces **zero protocol and fund fees** — all trade fees (e.g. 0.25%) go 100% to LPs.
@@ -83,19 +89,19 @@ Admin address is in `programs/amm/src/lib.rs` under `pub mod admin` — currentl
 |-------------|-----------|--------|
 | Devnet (v1) | `FNJHxG95pChntXLTzBxdCPdgcA4iPsjHpJBHPJXmNN28` | Closed |
 | Mainnet (v1) | `FXGBNyA7VUWAwhCcXuotQbaHjCteXBLwXiHdwgbbUz2U` | Closed |
-| Mainnet (v2) | `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX` | **Active** |
+| Mainnet (v2) | `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX` | **Closed 2026-07-17** |
 
-Current IDs in code:
+Historical IDs (all now closed on chain):
 - Devnet: `8kpocpzq5VVz1FbNNCmpb72j8apf8dFb7XsJfYUdCmiC`
 - Mainnet: `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX`
 
-### Active Mainnet Accounts
+### Former Mainnet Accounts (zombie PDAs, no longer operable)
 - AmmConfig (index=1): `DCYTDLDRTb6nwmRsqFUeNEvZrVXNryKA7SB8dCNQWwhP`
-- IDL Account: `5eXGUyeWPmfG7CMuCsKaJiPbYBKSetELeKDKTYsBLRcC`
-- Code Verify: ✅ `60e8dc58b8b666829358b88470d16dca469fd82db03e457a5eafa523a1019888`
-- 10 Active Pools: TSLAx, CRCLx, MSTRx, NVDAx, AMZNx, AAPLx, GOOGLx, QQQx, METAx, SPYx (all paired with USDC)
+- IDL Account: `5eXGUyeWPmfG7CMuCsKaJiPbYBKSetELeKDKTYsBLRcC` (closed 2026-07-17)
+- Code Verify (historical): `60e8dc58b8b666829358b88470d16dca469fd82db03e457a5eafa523a1019888`
+- 10 Pools (all zombie): TSLAx, CRCLx, MSTRx, NVDAx, AMZNx, AAPLx, GOOGLx, QQQx, METAx, SPYx (all paired with USDC)
 
-See `MAINNET_DEPLOY.md` for full deployment report.
+See `MAINNET_DEPLOY.md` for the full historical deployment report and shutdown banner.
 
 ## Deployment Cost Estimate
 

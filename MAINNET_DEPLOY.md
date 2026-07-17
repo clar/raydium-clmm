@@ -1,7 +1,13 @@
 # Mainnet Deployment Report
 
 > Raydium CLMM Fork — Zero Protocol/Fund Fees
-> Deployed: 2026-03-04 | Updated: 2026-03-15
+> Deployed: 2026-03-04 | Updated: 2026-03-15 | **CLOSED: 2026-07-17**
+
+> ⚠️ **本部署已永久关停。** Fork 程序 `CftvdSTmVaaXg4YGKhuCCWo2uPhd9RTY35JyyKqadXnX`
+> 已通过 `solana program close` 关闭，无法重新部署到同一地址。
+> 所有 LP 已撤出，IDL 账户已关闭，累计回收 ~8.90 SOL。
+> 本文档中的池子、AmmConfig 等 PDA 地址均已成为僵尸账户（存在于账本但无程序可操作）。
+> 完整关停流程与 tx 签名见 [raydium-lp-compare/SHUTDOWN.md](https://github.com/clar/raydium-lp-compare/blob/main/SHUTDOWN.md)。
 
 ---
 
